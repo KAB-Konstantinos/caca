@@ -2,7 +2,7 @@
 
 ## Overview
 
-This is the Caca project. Below are the instructions and details.
+This is the Caca project. Below are the instructions and the details.
 
 ## Instructions
 
