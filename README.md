@@ -11,3 +11,7 @@ This is the Caca project. Below are the instructions and details.
 ## Getting Started
 
 Add more details here as the project develops.
+
+## Aditional Info
+
+I like toes
