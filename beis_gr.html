@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Bobeis</title>
+    <meta property="og:title" content="Bobeis">
+  <meta property="og:description" content="A site that shows pictures of dogs and their description">
+  <meta property="og:url" content="https://bobeis.org">
+  <meta property="og:image" content="https://bobeis.org/your-preview-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+    <style>
+img, video, iframe {
+    max-width: 100%;
+    height: auto;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 20px;
+}
+
+/* FORCE images to be a reasonable size on desktop */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+}
+
+/* Specifically for desktop screens - THIS IS THE FIX */
+@media (min-width: 1024px) {
+    img {
+        max-width: 600px;     /* Images won't get bigger than 600px on desktop */
+        width: 100%;
+    }
+}
+
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(80deg, #d4a373 15%, #e9c46a 100%);
+        }
+    </style>
+    <body>
+         <table>
+           <td><a href = "Bobeis-mainpage_gr.html" target=_self>
+            <button style="background-color: blueviolet;color: rgb(255, 255, 255);border-radius:5px;"title="Πηγαίνετε στηv αρχική σελίδα του Bobeis"><h2>Bobeis αρχική σελίδα</h2></button>
+            </a></td>
+            <td><h1>Μπέης</h1></td>
+        </table>
+        <hr>
+        <h3>Ένας σκύλος που είναι πάντα γεμάτος χαρά!!</h3>
+        <img src="20240820_093120.jpg" height="600" alt="Φωτογραφία του Μπέη">
+        <br>
+        <br>
+        <img src="20250809_102613.jpg" height="600" alt="Φωτογραφία του Μπέη">
+        <br>
+        <br>
+        <img src="20250812_082719.jpg" height="600" alt="Φωτογραφία του Μπέη">
+    
+    </body>
+
+</html>
