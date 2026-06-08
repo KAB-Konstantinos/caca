@@ -1,73 +1,161 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Bobeis</title>
-    <meta property="og:title" content="Bobeis">
-  <meta property="og:description" content="A site that shows pictures of dogs and their description">
-  <meta property="og:url" content="https://bobeis.org">
-  <meta property="og:image" content="https://bobeis.org/your-preview-image.jpg">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta charset="UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Most Important Button You'll Ever Click</title>
     <style>
-img, video, iframe {
-    max-width: 100%;
-    height: auto;
-}
-
-body {
-    overflow-x: hidden;
-}
-
-* {
-    box-sizing: border-box;
-}
-
-.container {
-    max-width: 800px;
-    margin: 0 auto;
-    width: 100%;
-    padding: 20px;
-}
-
-/* FORCE images to be a reasonable size on desktop */
-img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 12px;
-}
-
-/* Specifically for desktop screens - THIS IS THE FIX */
-@media (min-width: 1024px) {
-    img {
-        max-width: 600px;     /* Images won't get bigger than 600px on desktop */
-        width: 100%;
-    }
-}
-
-
         body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(80deg, #d4a373 15%, #e9c46a 100%);
+            font-family: 'Comic Sans MS', cursive;
+            background: linear-gradient(45deg, #ff6b6b, #feca57, #48dbfb, #ff9ff3);
+            min-height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        
+        .container {
+            text-align: center;
+            padding: 40px;
+            background: rgba(255,255,255,0.9);
+            border-radius: 20px;
+            box-shadow: 0 10px 50px rgba(0,0,0,0.3);
+        }
+        
+        h1 {
+            color: #d63031;
+            animation: bounce 0.5s infinite alternate;
+        }
+        
+        .mystery-button {
+            font-size: 24px;
+            padding: 20px 40px;
+            background: #6c5ce7;
+            color: white;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin: 20px;
+        }
+        
+        .mystery-button:hover {
+            transform: scale(1.1) rotate(5deg);
+        }
+        
+        .counter {
+            font-size: 48px;
+            color: #2d3436;
+            margin: 30px 0;
+        }
+        
+        @keyframes bounce {
+            from { transform: translateY(0); }
+            to { transform: translateY(-10px); }
+        }
+        
+        .floating-text {
+            position: absolute;
+            font-size: 20px;
+            animation: float 2s ease-in-out infinite;
+            pointer-events: none;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-30px); }
+        }
+        
+        .surprise {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 72px;
+            z-index: 9999;
+            display: none;
         }
     </style>
-    <body>
-         <table>
-           <td><a href = "Bobeis-mainpage_gr.html" target=_self>
-            <button style="background-color: blueviolet;color: rgb(255, 255, 255);border-radius:5px;"title="Πηγαίνετε στηv αρχική σελίδα του Bobeis"><h2>Bobeis αρχική σελίδα</h2></button>
-            </a></td>
-            <td><h1>Μπέης</h1></td>
-        </table>
-        <hr>
-        <h3>Ένας σκύλος που είναι πάντα γεμάτος χαρά!!</h3>
-        <img src="20240820_093120.jpg" height="600" alt="Φωτογραφία του Μπέη">
-        <br>
-        <br>
-        <img src="20250809_102613.jpg" height="600" alt="Φωτογραφία του Μπέη">
-        <br>
-        <br>
-        <img src="20250812_082719.jpg" height="600" alt="Φωτογραφία του Μπέη">
+</head>
+<body>
+    <div class="container">
+        <h1>⚠️ WARNING ⚠️</h1>
+        <p>This button has been scientifically proven to:</p>
+        <p style="font-size: 20px;">✨ Make you laugh ✨<br/>🤔 Question your life choices<br/>🎉 Possibly summon a unicorn (not responsible)</p>
+        
+        <div class="counter" id="counter">0 clicks</div>
+        
+        <button class="mystery-button" onclick="clickButton()">DO NOT CLICK THIS BUTTON</button>
+        
+        <p id="message" style="margin-top: 30px; font-style: italic; color: #636e72;"></p>
+    </div>
     
-    </body>
-
+    <div class="surprise" id="surprise">🦄</div>
+    
+    <script>
+        let clicks = 0;
+        const messages = [
+            "You're doing great!",
+            "This is getting serious now",
+            "Why do we click buttons?",
+            "Are you still here?",
+            "I'm impressed by your dedication",
+            "Clicking... clicking... still clicking...",
+            "Have you considered taking a break?",
+            "Wow, okay, commit much?",
+            "Your thumb deserves a raise",
+            "UNICORN ACTIVATED!"
+        ];
+        
+        const phrases = [
+            "Nice click!", "WOW!", "Again? 😂", "LOL", "😜", "💀", "🔥", 
+            "Why tho?", "😭", "NOOOO", "STOP IT", "HELP", "OKAY BYE"
+        ];
+        
+        function clickButton() {
+            clicks++;
+            document.getElementById('counter').textContent = clicks + ' clicks';
+            
+            // Show random message
+            if (clicks <= 10) {
+                document.getElementById('message').textContent = messages[clicks - 1];
+            }
+            
+            // Create floating text effect
+            for (let i = 0; i < 5; i++) {
+                setTimeout(() => createFloatingText(), i * 100);
+            }
+            
+            // Unicorn surprise
+            if (clicks === 10) {
+                document.getElementById('surprise').style.display = 'block';
+                document.body.style.background = 'linear-gradient(45deg, #ff9ff3, #feca57, #ff6b6b, #48dbfb)';
+                
+                setTimeout(() => {
+                    document.getElementById('surprise').style.display = 'none';
+                }, 3000);
+            }
+            
+            // Random chaos
+            if (Math.random() < 0.15) {
+                document.querySelector('.container').style.transform = 
+                    `rotate(${Math.random() * 10 - 5}deg)`;
+            }
+        }
+        
+        function createFloatingText() {
+            const el = document.createElement('div');
+            el.className = 'floating-text';
+            el.textContent = phrases[Math.floor(Math.random() * phrases.length)];
+            el.style.left = Math.random() * window.innerWidth + 'px';
+            el.style.top = Math.random() * window.innerHeight + 'px';
+            el.style.color = '#' + Math.floor(Math.random()*16777215).toString(16);
+            document.body.appendChild(el);
+            
+            setTimeout(() => el.remove(), 2000);
+        }
+    </script>
+</body>
 </html>
