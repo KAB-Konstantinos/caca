@@ -12,6 +12,8 @@ This is the Caca project. Below are the instructions and details.
 
 Add more details here as the project develops.
 
-## Aditional Info
+## Additional Info
 
 I like toes
+
+Va réviser ton brevet
